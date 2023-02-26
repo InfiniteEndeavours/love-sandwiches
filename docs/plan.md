@@ -9,5 +9,5 @@ Program should do the following:
 - Print stock recommendations to the terminal
 - Check the sales data input from the user is valid
 
-Flowchat of process
+Flowchart of process
 ![Flowchart image](love_sandwiches.png)
