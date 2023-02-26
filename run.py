@@ -1,4 +1,3 @@
-from pprint import pprint
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -133,8 +132,24 @@ def main():
     sales_columns = get_last_5_entries_sales()
     stock_data = calculate_stock_data(sales_columns)
     update_worksheet(stock_data, 'stock')
+    return stock_data
 
 
 print("Welcome to Love Sandwiches Data Automation\n")
-main()
 
+stock_data_output = main()
+
+
+def get_stock_values(data):
+    """
+    Print out the calculated stock numbers for each sandwich type.
+    """
+    headings = SHEET.worksheet('stock').get_values()[0]
+
+    print("Make the following numbers of sandwiches for next market:\n")
+
+    return {heading: data for heading, data in zip(headings, data)}
+
+
+stock_values = get_stock_values(stock_data_output)
+print(stock_values)
