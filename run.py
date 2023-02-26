@@ -90,6 +90,21 @@ def update_worksheet(data, sheet_name):
     print(f"Succesfully updated {sheet_name} worksheet.\n")
 
 
+def get_last_5_entries_sales():
+    """
+    Collects collumns of data from sales worksheet, collecting
+    the last 5 entries for each sandwich and returns the data
+    as a list of lists
+    """
+    sales = SHEET.worksheet("sales")
+    columns = []
+    for ind in range(1, 7):
+        column = sales.col_values(ind)
+        # appends last 5 entries of each column to columns list
+        columns.append(column[-5:])
+    return columns
+
+
 def main():
     """
     Run all program functions
@@ -102,4 +117,5 @@ def main():
 
 
 print("Welcome to Love Sandwiches Data Automation\n")
-main()
+# main()
+sales_columns = get_last_5_entries_sales()
