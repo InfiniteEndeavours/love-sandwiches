@@ -35,6 +35,8 @@ def validate_data(values):
     or if there aren't exactly 6 values
     """
     try:
+        # For each value in values list, convert to integer.
+        # If it cannot be converted will raise ValueError in except clause.
         [int(value) for value in values]
         if len(values) != 6:
             raise ValueError(
