@@ -94,8 +94,8 @@ def update_surplus_worksheet(data):
     Upload new surplus data into the surplus worksheet.
     """
     print("Updating surplus worksheet...\n")
-    surplus = SHEET.worksheet("surplus")
-    surplus.append_row(data)
+    surplus_worksheet = SHEET.worksheet("surplus")
+    surplus_worksheet.append_row(data)
     print("Surplus worksheet updated succesfully.\n")
 
 
