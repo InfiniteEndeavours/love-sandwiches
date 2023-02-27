@@ -86,12 +86,12 @@ def update_worksheet(data, sheet_name):
     print(f"Updating {sheet_name} worksheet...\n")
     worksheet = SHEET.worksheet(sheet_name)
     worksheet.append_row(data)
-    print(f"Succesfully updated {sheet_name} worksheet.\n")
+    print(f"Successfully updated {sheet_name} worksheet.\n")
 
 
 def get_last_5_entries_sales():
     """
-    Collects collumns of data from sales worksheet, collecting
+    Collects columns of data from sales worksheet, collecting
     the last 5 entries for each sandwich and returns the data
     as a list of lists
     """
